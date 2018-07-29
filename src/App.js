@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import Movie from './Movie';
-
 import logo from './logo.svg';
 import './App.css';
-
-const movies=[
-  {id: 1,
-    title: "Star war" 
-  }, {id: 2,
-    title: "Spider Man" 
-  },{id: 3,
-    title: "Dead Pool" 
-  },
-
-
-]
-class App extends Component {
- 
-  render() {
-    return (
+import MovieList from './MovieList';
+import MovieDetails from './MovieDetails'
+import {
+  BrowserRouter as Router,
+  Route, Switch,Link
+} from 'react-router-dom'
+const  App=()=> (
+      <Router>
       <div className="App">
         <header className="App-header">
+        <Link to="/"> 
         <img src={logo} className={"App-logo"} alt="logo"/>
+        </Link> 
         </header>
-         {movies.map(movie => <Movie key={movie.id }   movie={movie}/>)  }
-         
+        <Switch>
+        <Route exact  path="/" component={MovieList}/>
+        <Route path="/:id" component={MovieDetails}/>
+        </Switch>
       </div>
+      </Router>
     );
-  }
-}
+
+
+
 
 export default App;
