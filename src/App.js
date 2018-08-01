@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch,Link} from 'react-router-dom'
 import MovieList from './MovieList';
 import MovieDetails from './MovieDetails'
-import {
-  BrowserRouter as Router,
-  Route, Switch,Link
-} from 'react-router-dom'
+import rootReducer from './rootReducer';
+
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+import {composeWithDevTools} from 'redux-devtools-extension';
+const store=createStore(
+  rootReducer,
+  {},
+  composeWithDevTools(),
+);
 const  App=()=> (
-      <Router>
+<Provider store={store}>
+  <Router>
       <div className="App">
         <header className="App-header">
         <Link to="/"> 
@@ -21,6 +29,7 @@ const  App=()=> (
         </Switch>
       </div>
       </Router>
+</Provider>
     );
 
 

@@ -13,22 +13,20 @@ export default class Reduxtest extends Component {
 export default Reduxtest; 
 
 defaultState={
-  welcome: "hi",
-  otherState: "some stuff",
+  welcome: "hello",
+  other: "other stuff"
 }
-
-
 hello=(state=defaultState,action)=>{
-   switch(action.type){
-     case 'GREET_ME' :
-     return {...state,welcome: action.result}
-     case  "GREET_WORLD":
-     return {...state,welcome: 'hello world'}
-     default:
-      return state;
-   }
-
+switch(action.type){
+  case "GREET_ME":
+  return {...state,welcome: action.result}
+  default:
+  return state
 }
+}
+
+
+
 
 const store=createStore(hello);
 const result ="something coming back from apis"
