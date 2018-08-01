@@ -29,8 +29,8 @@ class MoviedDetails extends Component {
     return (
      <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`} >
      <MovieInfo>
-         <OverDrive id={movie.id}>
-         <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title}/>
+         <OverDrive id={`${movie.id}`}>
+         <Poster src={`${POSTER_PATH}${movie.poster_path}`} />
          </OverDrive>
          <div>
 
