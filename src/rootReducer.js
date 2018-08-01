@@ -1,8 +1,10 @@
 import {combineReducers} from '../../../../Library/Caches/typescript/2.9/node_modules/redux';
-import message from './reducer';
 
+import toggle from './toggle/reducer';
+import movies from './movies/reducer';
 const rootReducer=combineReducers({
-    message: message,
+    toggle,
+    movies
 
 })
 

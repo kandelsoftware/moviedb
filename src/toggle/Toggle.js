@@ -2,7 +2,7 @@ import React, {  } from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import{toggleMessage} from './actions'
- const Toggle=({messageVisibility,toggleMessage})=> {
+ const Toggle=({messageVisibility,toggleMessage,getMovies})=> {
     return (
       <div>
         {
@@ -10,18 +10,19 @@ import{toggleMessage} from './actions'
           <p>this is your toggle </p>
         }
         <button onClick={toggleMessage}>
-            toggle me
+            Toggle me
         </button>
+       
       </div>
     )
 }
 
 
 const mapTODispatch=dispatch=>bindActionCreators({
-  toggleMessage
+  toggleMessage,
 },dispatch)
 const mapStateToProps=state=>({
-  messageVisibility: state.message.messageVisibility
+  messageVisibility: state.toggle.messageVisibility
   })
 export default connect(mapStateToProps,mapTODispatch)(Toggle);
 

@@ -4,10 +4,11 @@ const initialState={
 }
 
 export default function(state=initialState,action){
-const type=action.type
+const {type}=action
 switch(type){
 case TOGGLE_MESSAGE:
-return { messageVisibility: !state.messageVisibility}
+return { ...state,messageVisibility: !state.messageVisibility}
+
 default: 
 return state
 }
