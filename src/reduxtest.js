@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import createStore from 'react-redux';
+import React, { Component } from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react'
+import createStore from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-redux';
 
 export default class Reduxtest extends Component {
   render() {

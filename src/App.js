@@ -7,12 +7,14 @@ import MovieDetails from './MovieDetails'
 import rootReducer from './rootReducer';
 
 import {Provider} from "react-redux";
-import {createStore} from "redux";
+import {createStore, applyMiddleware} from "redux";
+import {logger} from 'redux-logger'
+import Toggle from './Toggle'
 import {composeWithDevTools} from 'redux-devtools-extension';
 const store=createStore(
   rootReducer,
   {},
-  composeWithDevTools(),
+  composeWithDevTools(applyMiddleware(logger)),
 );
 const  App=()=> (
 <Provider store={store}>

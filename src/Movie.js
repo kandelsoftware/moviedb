@@ -9,7 +9,6 @@ const Movie= ({movie})=>{
             <div>
                 <Link to={`/${movie.id}`}>
                 <OverDrive id={`/${movie.id}`}>
-
             <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt= {movie.title}/>
                 </OverDrive>
                 
